@@ -1,9 +1,8 @@
 const express = require("express");
 const mongoose = require('mongoose');
-const { database } = require('./db');
+const  database = require('./db');
 const Student =  require('./StudentModel');
 
-database();
 
 const app = express();
 
