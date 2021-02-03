@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dept</title>
+</head>
+
+<body>
+    <div align="right"><a href="/logout">Logout</a></div>
+    <div align="center">
+        <h1>Add Department</h1>
+        <form action="/dept/add" method="post">
+            <table border="1">
+                <tr>
+                    <th>Dept Name</th>
+                    <td> <input type="text" name="deptName"> </td>
+                </tr>
+                <tr>
+                    <th colspan="2" align="center"><input type="submit" value="Add"></th>
+                </tr>
+            </table>
+        </form>
+    </div>
+    <br /><br />
+    <table align="center" border="3">
+        <tr>
+            <th>DeptID</th>
+            <th>DeptName</th>
+            <th>Delete</th>
+            <th>Edit</th>
+        </tr>
+        <% for(i=0;i<depts.length;i++){ %>
+            <tr>
+                <td>
+                    <%= depts[i]._id %>
+                </td>
+                <td>
+                    <%= depts[i].deptName %>
+                </td>
+                <td><a href="/dept/del/<%= depts[i]._id %>">DELETE</a></td>
+                <td><a href="/dept/edit/<%= depts[i]._id %>">Edit</a></td>
+            </tr>
+            <% } %>
+    </table>
+</body>
+
+</html>

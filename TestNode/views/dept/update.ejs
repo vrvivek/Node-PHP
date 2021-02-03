@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Edit</title>
+</head>
+<body>
+    <div align="center">
+        <h1>Edit Department</h1>
+        <form action="/dept/edit" method="post">
+            <table border="1">
+                <tr>
+                    <th>Dept Name</th>
+                    <td> 
+                        <input type="hidden" name="_id" value="<%= dept._id %>">
+                        <input type="text" name="deptName" value="<%= dept.deptName %>"> 
+                    </td>
+                </tr>
+                <tr>
+                    <th colspan="2" align="center"><input type="submit" value="Edit"></th>
+                </tr>
+            </table>
+        </form>
+    </div>
+</body>
+</html>

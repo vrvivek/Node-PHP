@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Emp</title>
+</head>
+<body>
+    <div align="right"><a href="/logout">Logout</a></div>
+    <div align="center">
+        <h1>Add Employee</h1>
+        <form action="/emp/add" method="post">
+            <table border="1">
+                <tr>
+                    <th>Full Name</th>
+                    <td> <input type="text" name="fullName"> </td>
+                </tr>
+                <tr>
+                    <th>Email</th>
+                    <td> <input type="text" name="email"> </td>
+                </tr>
+                <tr>
+                    <th>City</th>
+                    <td> <input type="text" name="city"> </td>
+                </tr>
+                <tr>
+                    <td>Select Department</td>
+                    <td>
+                        <select name="deptID" >
+                            <% for(i=0;i<depts.length;i++){ %>
+                                <option value="<%= depts[i]._id %>"><%= depts[i].deptName %></option>
+                            <% } %>
+                        </select>
+                    </td>
+                </tr>
+                <tr>
+                    <th colspan="2" align="center"><input type="submit" value="Add"></th>
+                </tr>
+            </table>
+        </form>
+    </div>
+    <br /><br />
+    <table align="center" border="3">
+        <tr>
+            <th>DeptID</th>
+            <th>FullName</th>
+            <th>Email</th>
+            <th>City</th>
+            <th>Department</th>
+            <th>Delete</th>
+            <th>Edit</th>
+        </tr>
+        <% for(i=0;i<emps.length;i++){ %>
+            <tr>
+                <td>
+                    <%= emps[i]._id %>
+                </td>
+                <td>
+                    <%= emps[i].fullName %>
+                </td>
+                <td>
+                    <%= emps[i].email %>
+                </td>
+                <td>
+                    <%= emps[i].city %>
+                </td>
+                <td>
+                    <%= emps[i].deptID.deptName %>
+                </td>
+                <td><a href="/emp/del/<%= emps[i]._id %>">DELETE</a></td>
+                <td><a href="/emp/edit/<%= emps[i]._id %>">Edit</a></td>
+            </tr>
+            <% } %>
+    </table>
+</body>
+</html>

@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register</title>
+</head>
+
+<body>
+    <br /><br />
+    <div align="center">
+        <h1>Register Form</h1>
+        <h3><a href="/login">For Register</a></h3>
+        <form action="/register" method="POST">
+            <table border="1">
+                <tr>
+                    <th>Username</th>
+                    <td><input type="text" name="userName" pattern="[A-Za-z0-9]{4,}"></td>
+                </tr>
+                <tr>
+                    <th>Password</th>
+                    <td><input type="password" name="password"></td>
+                </tr>
+                <tr>
+                    <th>Full Name</th>
+                    <td><input type="text" name="fullName"></td>
+                </tr>
+                <tr>
+                    <th>Email</th>
+                    <td><input type="email" name="email"></td>
+                </tr>
+                <tr>
+                    <th colspan="2"><input type="submit" name="login" value="Register"><span style="color:red">
+                            <% if(typeof message !=='undefined' ) { %>
+                                <%= message %>
+                                    <% } %>
+                        </span></th>
+                </tr>
+            </table>
+        </form>
+    </div>
+</body>
+
+</html>
